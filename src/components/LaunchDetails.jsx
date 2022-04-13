@@ -37,17 +37,10 @@ export function LaunchDetails() {
                             {launch.launch_success ? "Successs" : "Failure"}
                         </Tag>
                     </Flex>
-                    <Flex align="center">
-                        <Icon as={HiCalendar} color="gray.500" />
-                        <Text fontSize="sm" ml={2} color="gray.500">
-                            {dayjs(launch.launch_date_local).locale("en").format("D MMMM, YYYY")}
-                        </Text>
-                    </Flex>
-                    <Link to={`/launch/${launch.flight_number}`}>
-                        <Button mt={2} colorScheme="purple">
-                            More Details
-                        </Button>
-                    </Link>
+                    <Box> 
+                        Rocket:<Link to={`/rockets/${launch.rocket?.rocket_id}`}>{launch.rocket?.rocket_name}</Link> 
+                    </Box>
+                    
                     </>
                 )
                 
